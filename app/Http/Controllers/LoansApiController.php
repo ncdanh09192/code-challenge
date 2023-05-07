@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\Loans;
 use App\Models\ScheduledRepayments;
 use App\Http\Requests\CreateLoanRequest;
-use Carbon\Carbon;
 
 class LoansApiController extends Controller
 {
@@ -30,7 +29,7 @@ class LoansApiController extends Controller
             'user_id' => auth()->user()->id
         ]);
         if(!empty($createdLoan)){
-            $this->createScheduledRepaymentsFromLoan($createdLoan);
+            $createdLoan->createScheduledRepaymentsFromLoan();
         }
         return $createdLoan;
     }
@@ -59,28 +58,6 @@ class LoansApiController extends Controller
     public function destroy(string $id)
     {
         return Loans::destroy($id);
-    }
-
-    /**
-     * Create Scheduled Repayments record from Loan's term.
-     */
-    private function createScheduledRepaymentsFromLoan(Loans $loan){
-        $totalAllScheduleRepaymentAmount = 0;
-        // Loop through the loan's term
-        for ($i=0; $i < $loan->term; $i++) {
-            // Each term will create one scheduled repayment
-            $scheduleRepaymentAmount = number_format((float)$loan->amount/$loan->term, 2, '.', '');
-            $totalAllScheduleRepaymentAmount += $scheduleRepaymentAmount;
-            if($i == ($loan->term - 1)){
-                // round the last amount record
-                $scheduleRepaymentAmount += $loan->amount - $totalAllScheduleRepaymentAmount;
-            }
-            ScheduledRepayments::create([
-                'loan_id' => $loan->id,
-                'amount' => $scheduleRepaymentAmount,
-                'repayment_date' => Carbon::now()->addWeeks(($i+1))
-            ]);
-        }
     }
 
     /**
