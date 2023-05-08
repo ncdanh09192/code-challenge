@@ -1,0 +1,15 @@
+The project is a RESTful API built using the latest version of Laravel (version 10) and some libraries to boost the development process. The main goal of the project is to create a simple and fast API in a short amount of time. To achieve this, Sanctum has been utilized for authenticating APIs, PHPUnit has been used for writing unit and feature tests, and Sail has been used for easy installation and deployment of the project.
+
+Features:
+
+The API supports authentication of user credentials using Sanctum.
+All routes in the API are RESTful by design and follow HTTP conventions.
+PHPUnit has been used to write unit and feature tests which ensure the quality and robustness of the project.
+Sail has been used as a Docker-based local development environment, making it easy to install and deploy the project.
+
+Patterns:
+Model-View-Controller pattern
+RESTful API pattern
+Factory
+Singleton
+
