@@ -39,5 +39,7 @@ To run the unit and feature tests for this project, run the following command:
 
 To test the project with Postman, first use the "User Login" API in the Postman collection provided with the default admin account : admin@code-challenge.com/123456. 
 After logging in, copy the token from the response and use it as a bearer token when calling other APIs for testing purposes.
+Please click here to run collection on your Postman 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://god.gw.postman.com/run-collection/12674271-a687300e-f5f5-4c29-ae8a-eb7459948f93?action=collection%2Ffork&collection-url=entityId%3D12674271-a687300e-f5f5-4c29-ae8a-eb7459948f93%26entityType%3Dcollection%26workspaceId%3D43cccfc1-41a3-466c-8eff-a83b4c0bf695)
 
 Thank you for using my Laravel project!
