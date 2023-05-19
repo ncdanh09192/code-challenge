@@ -16,17 +16,16 @@ composer install
 ```
 cp .env_example .env
 ```
-4. Run the following command to re-generate app-key:
-```
-./vendor/bin/sail artisan key:generate
-```
 4. Run the following command to set up Docker with Sail:
 
 ```
 ./vendor/bin/sail up -d
 ```
-
-3. After the Docker setup is complete, run the following command to migrate the database structure:
+5. Run the following command to re-generate app-key:
+```
+./vendor/bin/sail artisan key:generate
+```
+6. After the Docker setup is complete, run the following command to migrate the database structure:
 
 ```
 ./vendor/bin/sail artisan migrate
