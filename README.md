@@ -12,32 +12,32 @@ To install and run this project, please install Composer then follow the instruc
 ```
 composer install
 ```
-3. Run the following command to create your project's env file :
+4. Run the following command to create your project's env file :
 ```
 cp .env_example .env
 ```
-4. Run the following command to set up Docker with Sail:
+5. Run the following command to set up Docker with Sail:
 
 ```
 ./vendor/bin/sail up -d
 ```
-5. Run the following command to re-generate app-key:
+6. Run the following command to re-generate app-key:
 ```
 ./vendor/bin/sail artisan key:generate
 ```
-6. After the Docker setup is complete, run the following command to migrate the database structure:
+7. After the Docker setup is complete, run the following command to migrate the database structure:
 
 ```
 ./vendor/bin/sail artisan migrate
 ```
 
-4. Once the migration is complete, run the following command to create the default admin user:
+8. Once the migration is complete, run the following command to create the default admin user:
 
 ```
 ./vendor/bin/sail artisan db:seed
 ```
 
-5. Your installation is complete and you are ready to start using the project!
+Your installation is complete and you are ready to start using the project!
 
 ## Unit and Feature Tests
 
