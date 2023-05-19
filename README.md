@@ -1,13 +1,26 @@
 # Code-challenge Project README
 
-Welcome to my Laravel project! This project is built using Laravel framework and utilizes Docker with Sail for easy set up.
+Welcome to my Laravel project! This project is built using Laravel framework, Composer and utilizes Docker with Sail for easy set up.
 
-To install and run this project, please follow the instructions below:
+To install and run this project, please install Composer then follow the instructions below:
 
 ## Installation
 
 1. Clone the project from the GitHub repository.
-2. Run the following command to set up Docker with Sail:
+2. CD to your project.
+3. Run the following command to download dependency library :
+```
+composer install
+```
+3. Run the following command to create your project's env file :
+```
+cp .env_example .env
+```
+4. Run the following command to re-generate app-key:
+```
+./vendor/bin/sail artisan key:generate
+```
+4. Run the following command to set up Docker with Sail:
 
 ```
 ./vendor/bin/sail up -d
